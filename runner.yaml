@@ -35,4 +35,4 @@ webform:
 
 launch:
   type: binary
-  command: katana -u ${url_to_crawl}
+  command: /go/bin/katana -u ${url_to_crawl}
