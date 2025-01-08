@@ -17,6 +17,9 @@ build:
     apt install -y apt-transport-https
     wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' && apt update && apt install -y google-chrome-stable
     wget https://go.dev/dl/go1.21.6.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.21.6.linux-amd64.tar.gz && rm go1.21.6.linux-amd64.tar.gz
+    ENV GOROOT=/usr/local/go
+    ENV GOPATH=/go
+    ENV PATH=$GOPATH/bin:$GOROOT/bin:$PATH
     mkdir -p /go/src
     mkdir -p /go/bin
     export PATH=/go/bin:/usr/local/go/bin:$PATH
