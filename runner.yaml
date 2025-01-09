@@ -22,8 +22,6 @@ build:
     ENV PATH=$GOPATH/bin:$GOROOT/bin:$PATH
     mkdir -p /go/src
     mkdir -p /go/bin
-    mkdir -p /tmp/root
-    ENV HOME=/tmp/root
     cd /tmp && git clone https://github.com/projectdiscovery/katana.git
     cd /tmp/katana && sed -i 's|Mozilla\/5\.0 (Macintosh; Intel Mac OS X 11_1) AppleWebKit\/537\.36 (KHTML, like Gecko) Chrome\/87\.0\.4280\.88 Safari\/537\.36|CCBot\/2\.0 (http:\/\/commoncrawl\.org\/faq\/)|g' /tmp/katana/pkg/utils/utils.go
     cd /tmp/katana && go install ./cmd/katana
